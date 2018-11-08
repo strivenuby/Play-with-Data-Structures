@@ -66,6 +66,18 @@ class ArrayCls {
     return this.data[index]
   }
   /**
+   * 获取当前数组中最后一个元素
+   */
+  getLast() {
+    return this.get(this.size - 1)
+  }
+  /**
+   * 获取当前数组中第一个元素
+   */
+  getFirst() {
+    return this.get(0)
+  }
+  /**
    * 设置 index 索引位置的元素为 e
    * @param {Int} index 索引
    * @param {*} e 元素

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>栈与队列</title>
+	<style>
+		.vessel {
+			width: calc(100% / 2.1);
+			text-align: center;
+			display: inline-block;
+			position: relative;
+		}
+
+		.line-ul {
+			width: 50px;
+			border: 1px solid;
+			border-top: none;
+			height: 200px;
+			padding: 0px;
+			position: relative;
+			display: inline-block;
+		}
+
+		.line-li {
+			background-color: #18c2f3;
+			list-style: none;
+			width: 100%;
+			color: white;
+			text-align: center;
+			height: 50px;
+			line-height: 50px;
+			position: absolute;
+		}
+
+		.li-wrapper {
+			animation: wrapper-gradient 1s linear;
+		}
+
+		.vessel-center-btn {
+			position: absolute;
+			bottom: -10px;
+			left: 43%;
+		}
+
+		@keyframes wrapper-gradient {
+			0% {
+				transform: translateY(-100%);
+			}
+
+			100% {
+				transform: translateY(0);
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<div class="vessel">
+		<h4>入栈</h4>
+		<ul id="pushStack" class="line-ul">
+			<li class="line-li" style="bottom: 0px;">1</li>
+			<li class="line-li" style="bottom: 51px;">2</li>
+		</ul>
+		<button onclick="pushStack()" class="vessel-center-btn">查看效果</button>
+	</div>
+
+	<div class="vessel">
+		<h4>出栈</h4>
+		<ul id="outStack" class="line-ul">
+			<li class="line-li" style="bottom: 0px;">1</li>
+			<li class="line-li" style="bottom: 51px;">2</li>
+			<li class="line-li" style="bottom: 102px;">3</li>
+		</ul>
+		<button onclick="" class="vessel-center-btn">查看效果</button>
+	</div>
+</body>
+<script>
+	function pushStack() {
+		var ul = document.getElementById('pushStack')
+		var len = ul.children.length
+		if (len > 2) {
+			ul.removeChild(ul.children[--len])
+		}
+		var li = document.createElement('li')
+		li.className = 'line-li li-wrapper'
+		li.setAttribute('style', 'bottom: ' + 102 + 'px')
+		var text = document.createTextNode(++len)
+		li.appendChild(text)
+		ul.appendChild(li)
+	}
+</script>
+
+</html>
