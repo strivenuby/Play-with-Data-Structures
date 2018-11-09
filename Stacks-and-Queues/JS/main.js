@@ -1,9 +1,9 @@
 const ArrayStack = require('./ArrayStack')
 const ArrayQueue = require('./ArrayQueue')
-const loopQueue = require('./loopQueue')
+const LoopQueue = require('./LoopQueue')
 const stack = new ArrayStack()
 const queue = new ArrayQueue(20)
-const lqueue = new loopQueue(20)
+const lqueue = new LoopQueue(20)
 
 for (let i = 0; i < 5; i++) {
   stack.push(i)

@@ -1,6 +1,6 @@
 const resize = Symbol('resize')
 
-class loopQueue {
+class LoopQueue {
   constructor(capacity = 10) {
     this.data = []
     this.data.length = capacity + 1
@@ -67,4 +67,4 @@ class loopQueue {
   }
 }
 
-module.exports = loopQueue
+module.exports = LoopQueue
