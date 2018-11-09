@@ -35,3 +35,13 @@
 #### 循环队列
 
 原理：当元素出列后，首索引向后挪移一个空间；当元素入列后，如果元素后段未有剩余空间并且之前已有元素出列，则将队首视为入列
+
+代码演示：[LoopQueue](https://github.com/strivenuby/Play-with-Data-Structures/tree/master/Stacks-and-Queues/JS/LoopQueue.js)
+
+## 链表 (Linked List)
+
+- 最简单的动态数据结构
+
+- 数据存储在 "节点" (Node) 中
+  - 优点：真正的动态，不需要处理固定的容量问题
+  - 缺点：丧失了随机访问的能力
