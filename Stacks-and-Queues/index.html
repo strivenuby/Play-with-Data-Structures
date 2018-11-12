@@ -11,7 +11,6 @@
 			width: calc(100% / 2.1);
 			text-align: center;
 			display: inline-block;
-			position: relative;
 		}
 
 		.line-ul {
@@ -39,10 +38,8 @@
 			animation: wrapper-gradient 1s linear;
 		}
 
-		.vessel-center-btn {
-			position: absolute;
-			bottom: -10px;
-			left: 43%;
+		.li-opacity {
+			animation: wrapper-opacity 1s linear;
 		}
 
 		@keyframes wrapper-gradient {
@@ -52,6 +49,18 @@
 
 			100% {
 				transform: translateY(0);
+			}
+		}
+
+		@keyframes wrapper-opacity {
+			0% {
+				opacity: 1;
+				transform: translateY(0)
+			}
+
+			100% {
+				opacity: 0;
+				transform: translateY(-100%)
 			}
 		}
 	</style>
@@ -64,7 +73,9 @@
 			<li class="line-li" style="bottom: 0px;">1</li>
 			<li class="line-li" style="bottom: 51px;">2</li>
 		</ul>
-		<button onclick="pushStack()" class="vessel-center-btn">查看效果</button>
+		<div>
+			<button onclick="pushStack()">查看效果</button>
+		</div>
 	</div>
 
 	<div class="vessel">
@@ -74,7 +85,9 @@
 			<li class="line-li" style="bottom: 51px;">2</li>
 			<li class="line-li" style="bottom: 102px;">3</li>
 		</ul>
-		<button onclick="" class="vessel-center-btn">查看效果</button>
+		<div>
+			<button onclick="outStack()">查看效果</button>
+		</div>
 	</div>
 </body>
 <script>
@@ -90,6 +103,11 @@
 		var text = document.createTextNode(++len)
 		li.appendChild(text)
 		ul.appendChild(li)
+	}
+	function outStack() {
+		var ul = document.getElementById('outStack')
+		var li = ul.children[2]
+		li.className = 'line-li li-opacity'
 	}
 </script>
 
