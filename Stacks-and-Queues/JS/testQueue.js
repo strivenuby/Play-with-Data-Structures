@@ -1,5 +1,6 @@
 const ArrayQueue = require('./ArrayQueue')
 const LoopQueue = require('./LoopQueue')
+const LinkedListQueue = require('../../Linked-List/LinkedListQueue')
 
 function testQueue(q, opCount) {
   const startTime = Date.now()
@@ -23,3 +24,7 @@ console.log(`ArrayQueue, time: ${time1} ms`)
 const loopQueue = new LoopQueue(opCount)
 const time2 = testQueue(loopQueue, opCount)
 console.log(`LoopQueue, time: ${time2} ms`)
+
+const linkedListQueue = new LinkedListQueue(opCount)
+const time3 = testQueue(linkedListQueue, opCount)
+console.log(`LinkedListQueue, time: ${time3} ms`)
